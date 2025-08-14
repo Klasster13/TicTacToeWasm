@@ -9,14 +9,10 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 var apiUrl = builder.Configuration.GetConnectionString("ApiConnection")
    ?? "http://localhost:6543/";
 
-Console.WriteLine($"!!!!APIURL = {apiUrl}");
-
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<AuthHeaderHandler>();
 builder.Services.AddScoped<UserDataUpdateService>();
 builder.Services.AddScoped<RefreshDataService>();
-//builder.Services.AddScoped<GameHubService>();
-
 builder.Services.AddScoped<GameHubService>(provider => new GameHubService(apiUrl));
 
 builder.Services.AddHttpClient("HttpClient", client =>

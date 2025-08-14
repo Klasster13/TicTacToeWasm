@@ -22,21 +22,6 @@ public class Field
         set => Board[y][x] = value;
     }
 
-    //public Field Clone()
-    //{
-    //    var clone = new Field();
-
-    //    for (int i = 0; i < DefaultSize; i++)
-    //    {
-    //        for (int j = 0; j < DefaultSize; j++)
-    //        {
-    //            clone.Board[i][j] = Board[i][j];
-    //        }
-    //    }
-
-    //    return clone;
-    //}
-
     public void Clear()
     {
         foreach (var row in Board)

@@ -21,7 +21,7 @@ public class GameHubService(string apiUrl) : IAsyncDisposable
         try
         {
             hubConnection = new HubConnectionBuilder()
-            .WithUrl($"{apiUrl}game/gameHub")
+            .WithUrl($"{apiUrl}/game/gameHub")
             .WithAutomaticReconnect()
             .Build();
 
